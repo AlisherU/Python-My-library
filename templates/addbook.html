@@ -1,4 +1,56 @@
 {% extends 'base.html' %} {% block title %} Add a new book page {% endblock %}
 {% block body %}
 <h1>Add a new book page</h1>
+<form method="POST"></form>
+<div class="from-group">
+  <input
+    type="text"
+    name="title"
+    id="title"
+    placeholder="Title"
+    class="form-control"
+  /><br />
+  <input
+    type="text"
+    name="author"
+    id="author"
+    placeholder="Author"
+    class="form-control"
+  /><br />
+  <input
+    type="text"
+    name="language"
+    id="language"
+    placeholder="Language"
+    class="form-control"
+  /><br />
+  <input
+    type="text"
+    name="genre"
+    id="genre"
+    placeholder="Genre"
+    class="form-control"
+  /><br />
+  <textarea
+    name="description"
+    id="description"
+    placeholder="Enter description"
+    class="form-control"
+  ></textarea>
+  <br />
+  <input
+    type="number"
+    name="price"
+    id="price"
+    placeholder="Price in Yen"
+    class="form-control"
+  /><br />
+  <input
+    type="date"
+    name="purchase_date"
+    id="purchase_date"
+    class="form-control"
+  /><br />
+  <button type="submit" class="btn btn-secondary btn-lg btn-block">Save</button>
+</div>
 {% endblock %}
