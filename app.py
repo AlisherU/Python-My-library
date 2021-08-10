@@ -19,7 +19,7 @@ class Book(db.Model):
     author = db.Column(db.String(100), nullable=False)
     genre = db.Column(db.String(100))
     language = db.Column(db.String(100))
-    finished_reading = db.Column(db.Boolean)
+    finished_reading = db.Column(db.String(50))
     purchase_date = db.Column(db.DateTime)
     price = db.Column(db.Integer)
     created = db.Column(db.DateTime, default=datetime.utcnow)
@@ -78,6 +78,7 @@ def update(id):
         book.author = request.form['author']
         book.genre = request.form['genre']
         book.language = request.form['language']
+        book.finished_reading = request.form['finished_reading']
 
         try:
             db.session.commit()

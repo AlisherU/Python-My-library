@@ -44,6 +44,13 @@ block body %}
 {{book.description}}</textarea
     >
     <br />
+    <input
+      type="text"
+      name="finished_reading"
+      id="finished_reading"
+      class="form-control"
+      value="{{book.finished_reading}}"
+    /><br />
     <input type="submit" class="btn btn-secondary btn-lg" value="Update" />
   </form>
 </div>
