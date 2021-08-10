@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block title %} Add a new book page {% endblock %}
-{% block body %}
+{% extends 'base.html' %} {% block title %} Update book page {% endblock %} {%
+block body %}
 <div class="container mt-5">
-  <h1>Add a new book page</h1>
+  <h1>Update the book</h1>
   <form method="post">
     <input
       type="text"
@@ -9,6 +9,7 @@
       id="title"
       placeholder="Title"
       class="form-control"
+      value="{{book.title}}"
     /><br />
     <input
       type="text"
@@ -16,6 +17,7 @@
       id="author"
       placeholder="Author"
       class="form-control"
+      value="{{book.author}}"
     /><br />
     <input
       type="text"
@@ -23,6 +25,7 @@
       id="language"
       placeholder="Language"
       class="form-control"
+      value="{{book.language}}"
     /><br />
     <input
       type="text"
@@ -30,15 +33,18 @@
       id="genre"
       placeholder="Genre"
       class="form-control"
+      value="{{book.genre}}"
     /><br />
     <textarea
       name="description"
       id="description"
       placeholder="Enter description"
       class="form-control"
-    ></textarea>
+    >
+{{book.description}}</textarea
+    >
     <br />
-    <input type="submit" class="btn btn-secondary btn-lg" value="Save" />
+    <input type="submit" class="btn btn-secondary btn-lg" value="Update" />
   </form>
 </div>
 {% endblock %}

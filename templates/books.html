@@ -1,6 +1,47 @@
 {% extends 'base.html' %} {% block title %} Books page {% endblock %} {% block
 body %}
-<div>
+<div class="container mt-5">
   <h1>All Books</h1>
+  {% if books %} {% for book in books %}
+  <div class="container-md">
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div
+          class="
+            row
+            g-0
+            border
+            rounded
+            overflow-hidden
+            flex-md-row
+            mb-4
+            shadow-sm
+            h-md-250
+            position-relative
+          "
+        >
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary"
+              >Author: {{book.author}}</strong
+            >
+            <h3 class="mb-0">{{book.title}}</h3>
+            <p class="card-text mb-auto">{{book.description}}</p>
+            <div class="mb-1 text-muted">Date: {{book.created.date()}}</div>
+            <p>Finished reading: {{book.finished_reading}}</p>
+            <a
+              href="/books/{{book.id}}/update"
+              class="btn btn-secondary btn-sm"
+            >
+              Update
+            </a>
+            <a href="/books/{{book.id}}/delete" class="btn btn-warning btn-sm"
+              >Delete</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% endif %}
 </div>
 {% endblock %}
