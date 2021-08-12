@@ -1,10 +1,10 @@
-{% extends 'base.html' %} {% block title %} Store page {% endblock %} {% block
-body %}
+{% extends 'base.html' %} {% block title %} Search Results {% endblock %} {%
+block body %}
 <div class="container mt-5">
-  <h1>Amazon Store books</h1>
+  <h1>Amazon Store</h1>
 
-  {% if books %} {% for book in books %}
-  <div class="card">
+  {% if books %} {% for book in books %} {% if book.price %}
+  <div class="card p-3 mb-5 rounded shadow-sm">
     <div class="card-body">
       <h5 class="card-title">{{book.title}}</h5>
       <p class="card-text">Author: {{book.author}}</p>
@@ -12,7 +12,8 @@ body %}
       <a href="{{book.link}}" class="btn btn-primary">Check the book</a>
     </div>
   </div>
-  {% endfor %} {% else %}
+  {% endif %} {% endfor %} {% else %}
   <p>No books have been added</p>
+  {% endif %}
 </div>
-{% endif %} {% endblock %}
+{% endblock %}
